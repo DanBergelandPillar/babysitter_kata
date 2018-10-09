@@ -1,13 +1,19 @@
 import unittest
 import babysitter
-
+import datetime
 
 class BabysitterTest(unittest.TestCase):
     def setUp(self):
         self.bs_under_test = babysitter.babysitter()
     
-    def test_exists(self):
-        self.assertEqual(self.bs_under_test.getTimeSpan(), 11)
+    def test_set_start_time_sets_time(self):
+        self.bs_under_test.set_start_time('8pm')
+        self.assertEqual(self.bs_under_test.start_time_int, 3)
+
+    def test_startTimeBefore5pmCoercedTo5pm(self):
+        self.bs_under_test.set_start_time('4pm')
+        self.assertEqual(self.bs_under_test.start_time_int, 0)
+
 
 if __name__ == '__main__':
     unittest.main()
