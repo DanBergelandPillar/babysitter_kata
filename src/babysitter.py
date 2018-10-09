@@ -7,9 +7,13 @@ HOURS = ['5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm', '1am', '2am'
 class babysitter():
     def __init__(self):
         self.start_time_int = 0
+        self.end_time_int = 0
 
     def set_start_time(self, start):
         if(start in HOURS):
             self.start_time_int = HOURS.index(start)
         else:
             self.start_time_int = 0
+    
+    def set_end_time(self, end):
+        self.end_time_int = HOURS.index(end)

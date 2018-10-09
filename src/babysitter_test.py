@@ -14,6 +14,10 @@ class BabysitterTest(unittest.TestCase):
         self.bs_under_test.set_start_time('4pm')
         self.assertEqual(self.bs_under_test.start_time_int, 0)
 
+    def test_set_end_time_sets_time(self):
+        self.bs_under_test.set_end_time('12pm')
+        self.assertEqual(self.bs_under_test.end_time_int, 7)
+
 
 if __name__ == '__main__':
     unittest.main()
