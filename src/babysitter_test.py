@@ -10,7 +10,7 @@ class BabysitterTest(unittest.TestCase):
         self.bs_under_test.set_start_time('8pm')
         self.assertEqual(self.bs_under_test.start_time_int, 3)
 
-    def test_startTimeBefore5pmCoercedTo5pm(self):
+    def test_startTimeBefore5pmCoercedTo5pmIfInvalid(self):
         self.bs_under_test.set_start_time('4pm')
         self.assertEqual(self.bs_under_test.start_time_int, 0)
 
@@ -18,7 +18,7 @@ class BabysitterTest(unittest.TestCase):
         self.bs_under_test.set_end_time('12pm')
         self.assertEqual(self.bs_under_test.end_time_int, 7)
 
-    def test_set_end_timeCoercedTo4am(self):
+    def test_set_end_timeCoercedTo4amIfInvalid(self):
         self.bs_under_test.set_end_time('5am')
         self.assertEqual(self.bs_under_test.end_time_int, 11)
 
