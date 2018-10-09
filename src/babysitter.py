@@ -16,4 +16,7 @@ class babysitter():
             self.start_time_int = 0
     
     def set_end_time(self, end):
-        self.end_time_int = HOURS.index(end)
+        if(end in HOURS):
+            self.end_time_int = HOURS.index(end)
+        else:
+            self.end_time_int = 11
