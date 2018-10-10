@@ -21,7 +21,11 @@ class CalculatorTest(unittest.TestCase):
 
     def test_FamilyAPaysShiftOverlap(self):
         wage = calculator.calculate('10pm','12pm',constants.FAMILY_A)
-        self.assertEqual(wage, 1*15. + 1*20.)        
+        self.assertEqual(wage, 1*15. + 1*20.)      
+
+    def test_FamilyBPays12perHourBefore10pm(self):
+        wage = calculator.calculate('5pm','10pm',constants.FAMILY_B)
+        self.assertEqual(wage, 5*12.) 
 
 if __name__ == '__main__':
     unittest.main()
