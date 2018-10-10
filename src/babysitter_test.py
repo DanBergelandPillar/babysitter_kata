@@ -1,6 +1,5 @@
 import unittest
 import babysitter
-import constants
 
 class BabysitterTest(unittest.TestCase):
     def setUp(self):
