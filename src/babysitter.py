@@ -5,9 +5,9 @@ STOP_TIME = datetime.time(hour=4,minute=0)
 HOURS = ['5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm', '1am', '2am','3am', '4am']
 
 class babysitter():
-    def __init__(self):
-        self.start_time_int = 0
-        self.end_time_int = 0
+    def __init__(self, start = 0, end = 0):
+        self.set_start_time(start)
+        self.set_end_time(end)
 
     def set_start_time(self, start):
         if(start in HOURS):
