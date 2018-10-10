@@ -29,5 +29,11 @@ class BabysitterTest(unittest.TestCase):
         test_babysitter = babysitter.Babysitter(start='1am', end='10pm')
         self.assertEqual(test_babysitter.start_time_int, test_babysitter.end_time_int)
 
+    def test_RateConstructor(self):
+        testRate = babysitter.Rate('5pm','10pm',15.)
+        self.assertEqual(testRate.pay_rate, 15.)
+        self.assertEqual(testRate.start_time_int, 0)
+        self.assertEqual(testRate.end_time_int, 5)
+
 if __name__ == '__main__':
     unittest.main()

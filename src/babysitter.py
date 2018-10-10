@@ -1,9 +1,9 @@
-from constants import HOURS
+HOURS = ['5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm', '1am', '2am','3am', '4am']
 
 class Babysitter():
     def __init__(self, start = 0, end = 0):
-        self.end_time_int = 0
         self.start_time_int = 0
+        self.end_time_int = 0
         self.set_start_time(start)
         self.set_end_time(end)
 
@@ -24,3 +24,11 @@ class Babysitter():
     def validate_times(self):
         if(self.end_time_int < self.start_time_int):
             self.end_time_int = self.start_time_int
+
+class Rate(Babysitter):
+    def __init__(self, start_time, end_time, pay_rate):
+        self.start_time_int = 0
+        self.end_time_int = 0
+        self.set_start_time(start_time)
+        self.set_end_time(end_time)
+        self.pay_rate = pay_rate
