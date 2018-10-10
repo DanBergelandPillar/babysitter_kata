@@ -22,8 +22,7 @@ The babysitter:
 The babysitter:
 - starts no earlier than 5:00PM
 - leaves no later than 4:00AM
-- will enter start time and end time, and the calculator will provide the amount to bill.
-- only babysits for one family per night / calculation
+- only babysits for one family per night
 - gets paid for full hours (times are rounded to the top of the hour)
 - should be prevented from mistakes when entering times (e.g. end time before start time, or outside of allowable work hours)
 
@@ -34,5 +33,5 @@ The job:
 - Family C pays $21 per hour before 9pm, then $15 the rest of the night
 - The time ranges are the same as the babysitter (5pm through 4am)
 
-
-
+The calculator:
+- Takes a babysitter start and end time, and a family, and returns total pay

@@ -45,7 +45,11 @@ class CalculatorTest(unittest.TestCase):
 
     def test_FamilyCPays21Before9pm(self):
         wage = calculator.calculate('5pm','9pm',constants.FAMILY_C)
-        self.assertEqual(wage,4*21)
+        self.assertEqual(wage, 4*21)
+
+    def test_FamilyCPays15After9pm(self):
+        wage = calculator.calculate('9pm','4am',constants.FAMILY_C)
+        self.assertEqual(wage, 7*15)
 
 if __name__ == '__main__':
     unittest.main()

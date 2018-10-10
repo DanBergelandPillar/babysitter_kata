@@ -12,5 +12,6 @@ FAMILY_B = [
 ]
 
 FAMILY_C = [
-    Rate('5pm','9pm',21.)
+    Rate('5pm','9pm',21.),
+    Rate('9pm','4am',15.)
 ]
