@@ -1,8 +1,4 @@
-import datetime
-
-START_TIME = datetime.time(hour=17,minute=0)
-STOP_TIME = datetime.time(hour=4,minute=0)
-HOURS = ['5pm', '6pm', '7pm', '8pm', '9pm', '10pm', '11pm', '12pm', '1am', '2am','3am', '4am']
+from constants import HOURS
 
 class Babysitter():
     def __init__(self, start = 0, end = 0):
