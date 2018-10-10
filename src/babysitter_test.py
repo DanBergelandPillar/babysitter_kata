@@ -4,7 +4,7 @@ import datetime
 
 class BabysitterTest(unittest.TestCase):
     def setUp(self):
-        self.bs_under_test = babysitter.babysitter()
+        self.bs_under_test = babysitter.Babysitter()
     
     def test_set_start_time_sets_time(self):
         self.bs_under_test.set_start_time('8pm')
@@ -23,9 +23,12 @@ class BabysitterTest(unittest.TestCase):
         self.assertEqual(self.bs_under_test.end_time_int, 11)
 
     def test_babySitterConstructor(self):
-        test_babysitter = babysitter.babysitter('10pm', '12pm')
+        test_babysitter = babysitter.Babysitter(start='10pm', end='12pm')
         self.assertEqual(test_babysitter.start_time_int, 5)
 
+    def test_endTimeIsCoercedToStartTimeIfBeforeStartTime(self):
+        test_babysitter = babysitter.Babysitter(start='1am', end='10pm')
+        self.assertEqual(test_babysitter.start_time_int, test_babysitter.end_time_int)
 
 if __name__ == '__main__':
     unittest.main()
