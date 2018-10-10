@@ -18,15 +18,9 @@ class Babysitter():
         if(end in HOURS):
             self.end_time_int = HOURS.index(end)
         else:
-            self.end_time_int = 11
+            self.end_time_int = len(HOURS) - 1
         self.validate_times()
 
     def validate_times(self):
         if(self.end_time_int < self.start_time_int):
             self.end_time_int = self.start_time_int
-
-class Rate():
-    def __init__(self, start_int, stop_int, pay_rate):
-        self.start_int = start_int
-        self.stop_int = stop_int
-        self.pay_rate = pay_rate

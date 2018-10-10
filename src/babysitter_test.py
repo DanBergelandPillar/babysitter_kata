@@ -1,6 +1,6 @@
 import unittest
 import babysitter
-import datetime
+import constants
 
 class BabysitterTest(unittest.TestCase):
     def setUp(self):
@@ -29,12 +29,6 @@ class BabysitterTest(unittest.TestCase):
     def test_endTimeIsCoercedToStartTimeIfBeforeStartTime(self):
         test_babysitter = babysitter.Babysitter(start='1am', end='10pm')
         self.assertEqual(test_babysitter.start_time_int, test_babysitter.end_time_int)
-
-    def test_RateConstructor(self):
-        rate = babysitter.Rate(0,1,15.)
-        self.assertEqual(rate.pay_rate, 15.)
-        self.assertEqual(rate.start_int, 0)
-        self.assertEqual(rate.stop_int, 1)
 
 if __name__ == '__main__':
     unittest.main()
